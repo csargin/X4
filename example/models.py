@@ -9,7 +9,7 @@ from django.db import models
 # https://www.techwithtim.net/tutorials/django/sqlite3-database/
 
 
-class Stock(models.Model):
+class ships(models.Model):
     id = models.AutoField(primary_key=True)
     ticker = models.CharField(max_length = 10)
 
