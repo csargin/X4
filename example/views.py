@@ -2,6 +2,7 @@
 from datetime import datetime
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from .models import Ships
 
 def home(request):
     ticker_list = tuple(Ships.objects.values_list('ticker', flat = True))
