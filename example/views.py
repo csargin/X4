@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 def home(request):
-    ticker_list = tuple(x4.objects.values_list('ticker', flat = True))
+    ticker_list = tuple(api.objects.values_list('ticker', flat = True))
     if len(ticker_list)>0:
         try:
             api = ticker_list
