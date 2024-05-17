@@ -4,7 +4,15 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 def home(request):
-    return render(request, 'home.html')
+    ticker_list = tuple(x4.objects.values_list('ticker', flat = True))
+    if len(ticker_list)>0:
+        try:
+            api = ticker_list
+        except Exception as e:
+            api = "Error"
+        return render(request, 'home.html',{'api': api })
+    else:
+        return render(request, 'home.html',{'api': "" })
 
 def about(request):
     return render(request, "about.html", {})
