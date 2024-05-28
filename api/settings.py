@@ -88,7 +88,7 @@ DATABASES = {
         'PORT': os.environ.get("DB_PORT"),
         'OPTIONS': {
             'sslmode': 'require',
-            'options': 'endpoint=ep-replace-this-12345679',
+            'options': 'options=endpoint%3Dprj_OzXJO7q3K27926rbkYNYYCGqmziQ',
         },
     }
 }
