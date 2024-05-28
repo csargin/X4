@@ -30,25 +30,27 @@ def calendar(request):
     file_path = os.path.join(folder_path , "db.csv")
     df = pd.read_csv(file_path)
     
-    # Iterate through the DataFrame and create model instances
-    for index, row in df.iterrows():
-        ship = Ships(
-            ship_name=row['ship_name'],
-            ship_class=row['ship_class'],
-            ship_race=row['ship_race'],
-            ship_price=row['ship_price'],
-            ship_weapon=row['ship_weapon'],
-            ship_turret=row['ship_turret'],
-            ship_hull=row['ship_hull'],
-            ship_cargo=row['ship_cargo'],
-            ship_dock=row['ship_dock'],
-            ship_hangar=row['ship_hangar'],
-            ship_dlc=row['ship_dlc'],
-            ship_role=row['ship_role'],
-            ship_shield=row['ship_shield'],
-            ship_speed=row['ship_speed'],      
-
-        )
-        #to save the current product
-        product.save()
-        return render(request, 'calendar.html' , {})
+    try:
+        # Iterate through the DataFrame and create model instances
+        for index, row in df.iterrows():
+            ship = Ships(
+                ship_name=row['ship_name'],
+                ship_class=row['ship_class'],
+                ship_race=row['ship_race'],
+                ship_price=row['ship_price'],
+                ship_weapon=row['ship_weapon'],
+                ship_turret=row['ship_turret'],
+                ship_hull=row['ship_hull'],
+                ship_cargo=row['ship_cargo'],
+                ship_dock=row['ship_dock'],
+                ship_hangar=row['ship_hangar'],
+                ship_dlc=row['ship_dlc'],
+                ship_role=row['ship_role'],
+                ship_shield=row['ship_shield'],
+                ship_speed=row['ship_speed'],      
+    
+            )
+            #to save the current product
+            product.save()
+    except:
+        return render(request, 'calendar.html' , {file_path})
