@@ -52,5 +52,6 @@ def calendar(request):
             )
             #to save the current product
             product.save()
+            return render(request, 'calendar.html' , {file_path})
     except:
         return render(request, 'calendar.html' , {file_path})
