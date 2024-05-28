@@ -52,5 +52,3 @@ def import_db(request):
         )
         #to save the current product
         product.save()
-    
-    print("CSV data has been loaded into the Django database.")
