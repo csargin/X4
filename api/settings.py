@@ -88,7 +88,7 @@ DATABASES = {
         'PORT': os.environ.get("DB_PORT"),
         'OPTIONS': {
             'sslmode': 'require',
-            'options': 'options=endpoint%3Dep-jolly-voice-a4qmqtvo',
+            'options': 'options=endpoint%3Dep-jolly-voice-a4qmqtvo-pooler.us-east-1.aws.neon.tech',
         },
     }
 }
