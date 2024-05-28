@@ -28,9 +28,10 @@ def calendar(request):
     home_dir = os.getcwd()
     folder_path = os.path.join(home_dir, "x4")
     file_path = os.path.join(folder_path , "db.csv")
-    df = pd.read_csv(file_path)
+    
     
     try:
+        df = pd.read_csv(file_path)
         # Iterate through the DataFrame and create model instances
         for index, row in df.iterrows():
             ship = Ships(
