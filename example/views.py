@@ -22,6 +22,8 @@ def about(request):
 def calendar(request):
     import pandas as pd
     from django.contrib.auth.models import User
+
+    open(x, 'a').close()
     
     # Read CSV file into a DataFrame
     csv_file_path = 'db.csv'
