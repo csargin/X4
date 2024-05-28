@@ -31,6 +31,7 @@ def calendar(request):
     
     
     try:
+        """
         df = pd.read_csv(file_path)
         # Iterate through the DataFrame and create model instances
         for index, row in df.iterrows():
@@ -52,7 +53,7 @@ def calendar(request):
     
             )
             #to save the current product
-            product.save()
+            product.save()"""
             return render(request, 'calendar.html' , {file_path})
     except:
         return render(request, 'calendar.html' , {file_path})
