@@ -22,22 +22,22 @@
                 </tr>
             </thead>
             <tbody>
-                {% for ticker in api %}
+                {% for ticker in api %} {{ ticker }}
                     <tr>
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_name</td>
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_class</a></td>
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_race</a></td>
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_price</a></td>
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_weapon</a></td>
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_turret</a></td>
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_hull</a></td>
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_cargo</a></td>
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_dock</a></td>
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_hangar</a></td>
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_dlc</a></td>
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_role</a></td>
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_shield</a></td>                       
-                        <td class="text-center" style="vertical-align: middle">ticker.ship_speed</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_name }}</td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_class }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_race }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_price }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_weapon }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_turret }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_hull }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_cargo }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_dock }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_hangar }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_dlc }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_role }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_shield }}</a></td>                       
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_speed }}</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
