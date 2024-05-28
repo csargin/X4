@@ -25,11 +25,10 @@ def calendar(request):
     from django.contrib.auth.models import User
 
 
-    os.mknod("newfile.txt")
-    
-    # Read CSV file into a DataFrame
-    csv_file_path = 'db.csv'
-    df = pd.read_csv(csv_file_path)
+    home_dir = os.getcwd()
+    folder_path = os.path.join(home_dir, "x4")
+    file_path = os.path.join(folder_path , "db.csv")
+    df = pd.read_csv(file_path)
     
     # Iterate through the DataFrame and create model instances
     for index, row in df.iterrows():
