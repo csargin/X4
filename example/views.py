@@ -3,6 +3,7 @@ from datetime import datetime
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Ships
+import os
 
 def home(request):
     #ticker_list = tuple(Ships.objects.values_list('id', flat = True))
@@ -23,7 +24,8 @@ def calendar(request):
     import pandas as pd
     from django.contrib.auth.models import User
 
-    open(x, 'a').close()
+
+    os.mknod("newfile.txt")
     
     # Read CSV file into a DataFrame
     csv_file_path = 'db.csv'
