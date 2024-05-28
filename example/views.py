@@ -52,3 +52,4 @@ def import_db(request):
         )
         #to save the current product
         product.save()
+        return render(request, 'calendar.html' , {})
