@@ -12,12 +12,12 @@
                 </tr>
             </thead>
             <tbody>
-                {% for stock_ticker in api %}
+                {% for ticker in api %}
                     <tr>
                         <td class="text-center" style="vertical-align: middle">Stock Name</td>
                         <td class="text-center" style="vertical-align: middle">stock_ticker</a></td>
                         <td class="text-center" style="vertical-align: middle">stock_ticker</a></td>
-                        <td class="text-center" style="vertical-align: middle">{{ api  }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.ship_name  }}</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
