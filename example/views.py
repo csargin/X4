@@ -20,10 +20,6 @@ def about(request):
     return render(request, "about.html", {})
 
 def calendar(request):
-    return render(request, 'calendar.html' , {})
-
-
-def import_db(request):
     import pandas as pd
     from django.contrib.auth.models import User
     
