@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from .models import Ships
 
 def home(request):
-    ticker_list = tuple(Ships.objects.values_list('ticker', flat = True))
+    ticker_list = tuple(Ships.objects.values_list('id', flat = True))
     if len(ticker_list)>0:
         try:
             api = ticker_list
