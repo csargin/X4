@@ -31,4 +31,4 @@ def calendar(request):
     
     
     
-    return render(request, 'calendar.html' , {file_path})
+    return render(request, 'calendar.html' , {'file_path': file_path })
