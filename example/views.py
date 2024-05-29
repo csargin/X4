@@ -43,7 +43,7 @@ def calendar(request):
                      ship_role = row.ship_role,
                      ship_shield = row.ship_shield,
                      ship_speed = row.ship_speed)
-        member.save()
+        ship.save()
 
     
     
