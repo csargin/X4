@@ -30,8 +30,8 @@ def calendar(request):
     file_path = os.path.join(folder_path , "db.csv")
     #df = pd.read_csv(file_path)
 
-    url = 'https://github.com/csargin/x4/blob/main/example/static/db.csv'
-    df = pd.read_csv(url, index_col=0)  
+    url = 'https://raw.githubusercontent.com/csargin/x4/main/example/static/db.csv?token=GHSAT0AAAAAACSNZK23F6EK32GWXQNC5KRWZSW2IXQ'
+    df = pd.read_csv(url, index_col=0, sep=';')  
     
     
     
