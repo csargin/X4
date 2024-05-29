@@ -5,6 +5,7 @@
         <table class="table table-striped table-bordered table-hover align="left">
             <thead class="thead-dark">
                 <tr>
+                    <th class="text-center" style="vertical-align: middle" scope="col">id</th>
                     <th class="text-center" style="vertical-align: middle" scope="col">ship_name</th>
                     <th class="text-center" style="vertical-align: middle" scope="col">ship_class</th>
                     <th class="text-center" style="vertical-align: middle" scope="col">ship_race</th>
@@ -19,13 +20,12 @@
                     <th class="text-center" style="vertical-align: middle" scope="col">ship_role</th>
                     <th class="text-center" style="vertical-align: middle" scope="col">ship_shield</th>
                     <th class="text-center" style="vertical-align: middle" scope="col">ship_speed</th>
-                    <th class="text-center" style="vertical-align: middle" scope="col">id</th>
                     <th class="text-center" style="vertical-align: middle" scope="col">test</th>
                 </tr>
             </thead>
             <tbody>
                 {% for ticker in api %}
-                    <tr>
+                    <tr>                        
                         <td class="text-center" style="vertical-align: middle">{{ ticker.0 }}</td>
                         <td class="text-center" style="vertical-align: middle">{{ ticker.1 }}</a></td>
                         <td class="text-center" style="vertical-align: middle">{{ ticker.2 }}</a></td>
