@@ -29,6 +29,10 @@ def calendar(request):
     folder_path = os.path.join(home_dir, "x4")
     file_path = os.path.join(folder_path , "db.csv")
     df = pd.read_csv(file_path)
+
+    url = 'https://github.com/csargin/x4/blob/main/example/static/db.csv'
+    df = pd.read_csv(url, index_col=0)
+    print(df.head(5))
     
     
     
