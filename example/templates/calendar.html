@@ -1,1 +1,52 @@
-{{ file_path }}
+{% extends 'base.html' %}
+{% block content %}
+
+    {% if df %}
+        <table class="table table-striped table-bordered table-hover align="left">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_name</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_class</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_race</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_price</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_weapon</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_turret</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_hull</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_cargo</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_dock</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_hangar</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_dlc</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_role</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_shield</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">ship_speed</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">id</th>
+                    <th class="text-center" style="vertical-align: middle" scope="col">test</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ticker in df %}
+                    <tr>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.0 }}</td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.1 }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.2 }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.3 }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.4 }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.5 }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.6 }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.7 }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.8 }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.9 }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.10 }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.11 }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.12 }}</a></td>                       
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.13 }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker.14 }}</a></td>
+                        <td class="text-center" style="vertical-align: middle">{{ ticker }}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        Portfolio is Empty
+    {% endif%}
+{% endblock %}
