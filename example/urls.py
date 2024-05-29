@@ -4,7 +4,10 @@ from example import views
 from example.views import home
 
 urlpatterns = [
-    path('', views.home, name ="home"),path('about.html', views.about, name ="about"),path('calendar.html', views.calendar, name ="calendar"),
+    path('', views.home, name ="home"),
+    path('about.html', views.about,name ="about"),
+    path('calendar.html', views.calendar, name ="calendar"),
+    path('ships.html', views.ships, name ="ships")
 ]
 
 
