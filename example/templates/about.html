@@ -1,42 +1,10 @@
-<table class="sortable">
-  <thead>
-    <tr>      
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_name</th>
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_class</th>
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_race</th>
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_price</th>
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_weapon</th>
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_turret</th>
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_hull</th>
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_cargo</th>
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_dock</th>
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_hangar</th>
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_dlc</th>
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_role</th>
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_shield</th>
-      <th class="text-center" style="vertical-align: middle" scope="col">ship_speed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="text-center" style="vertical-align: middle"> 1 </td>
-      <td class="text-center" style="vertical-align: middle"> 2 </a></td>
-      <td class="text-center" style="vertical-align: middle"> 3 </a></td>
-      <td class="text-center" style="vertical-align: middle"> 4 </a></td>
-      <td class="text-center" style="vertical-align: middle"> 5 </a></td>
-      <td class="text-center" style="vertical-align: middle"> 6 </a></td>
-      <td class="text-center" style="vertical-align: middle"> 7 </a></td>
-      <td class="text-center" style="vertical-align: middle"> 8 </a></td>
-      <td class="text-center" style="vertical-align: middle"> 9 </a></td>
-      <td class="text-center" style="vertical-align: middle"> 10 </a></td>
-      <td class="text-center" style="vertical-align: middle"> 11 </a></td>
-      <td class="text-center" style="vertical-align: middle"> 12 </a></td>                       
-      <td class="text-center" style="vertical-align: middle"> 13 </a></td>
-      <td class="text-center" style="vertical-align: middle"> 14 </a></td>
-    </tr>
-  </tbody>
-</table>
+{% extends 'base.html' %}
+{% block content %}
 
-<!-- Vanilla JavaScript table sort https://github.com/tofsjonas/sortable -->
-<link href="https://cdn.jsdelivr.net/gh/tofsjonas/sortable@latest/sortable.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/gh/tofsjonas/sortable@latest/sortable.min.js"></script>
+    
+    {% if api %}
+        Portfolio is not Empty
+    {% else %}
+        Portfolio is Empty
+    {% endif%}
+{% endblock %}
