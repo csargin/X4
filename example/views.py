@@ -24,8 +24,10 @@ def calendar(request):
     import pandas as pd
     from django.contrib.auth.models import User
 
-    url = 'https://raw.githubusercontent.com/csargin/x4/main/example/static/db.csv?token=GHSAT0AAAAAACSNZK23F6EK32GWXQNC5KRWZSW2IXQ'
+    url = 'https://github.com/csargin/x4/blob/main/example/static/db.csv?raw=true'
     df = pd.read_csv(url, index_col=0, sep=';')  
+
+    
     
     
     
