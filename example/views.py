@@ -20,7 +20,7 @@ def home(request):
 def about(request):
     return render(request, "about.html", {})
 
-def calendar(request):
+def add_data(request):
     import pandas as pd
     from django.contrib.auth.models import User
     from io import StringIO
@@ -43,10 +43,9 @@ def calendar(request):
                      ship_role = row.ship_role,
                      ship_shield = row.ship_shield,
                      ship_speed = row.ship_speed)
-        ship.save()
+        ship.save()   
+    
+    return render(request, 'calendar.html' )
 
-    
-    
-    
-    
+def calendar(request):
     return render(request, 'calendar.html' )
