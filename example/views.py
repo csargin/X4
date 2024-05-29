@@ -7,7 +7,7 @@ import os
 
 def home(request):
     #ticker_list = tuple(Ships.objects.values_list('id', flat = True))
-    ticker_list = Ships.objects.values_list('ship_name', 'ship_class', 'ship_race', 'ship_price', 'ship_weapon', 'ship_turret', 'ship_hull', 'ship_cargo', 'ship_dock', 'ship_hangar', 'ship_dlc', 'ship_role', 'ship_shield', 'ship_speed', 'id')
+    ticker_list = Ships.objects.values_list( 'id', 'ship_name', 'ship_class', 'ship_race', 'ship_price', 'ship_weapon', 'ship_turret', 'ship_hull', 'ship_cargo', 'ship_dock', 'ship_hangar', 'ship_dlc', 'ship_role', 'ship_shield', 'ship_speed')
     if len(ticker_list)>0:
         try:
             api = ticker_list
@@ -26,11 +26,27 @@ def calendar(request):
     from io import StringIO
 
     url = "https://raw.githubusercontent.com/csargin/x4/main/example/static/db.csv"
-    df = pd.read_csv(url, index_col=0, sep=';') 
+    df = pd.read_csv(url, index_col=False, sep=';')
+    
+    for index, row in df.iterrows():
+        ship = Ships(ship_name = row.ship_name,
+                     ship_class = row.ship_class,
+                     ship_race = row.ship_race,
+                     ship_price = row.ship_price,
+                     ship_weapon = row.ship_weapon,
+                     ship_turret = row.ship_turret,
+                     ship_hull = row.ship_hull,
+                     ship_cargo = row.ship_cargo,
+                     ship_dock = row.ship_dock,
+                     ship_hangar = row.ship_hangar,
+                     ship_dlc = row.ship_dlc,
+                     ship_role = row.ship_role,
+                     ship_shield = row.ship_shield,
+                     ship_speed = row.ship_speed)
+        member.save()
 
-    df = df.head()
     
     
     
     
-    return render(request, 'calendar.html' , {'api': df })
+    return render(request, 'calendar.html' )
