@@ -24,12 +24,6 @@ def calendar(request):
     import pandas as pd
     from django.contrib.auth.models import User
 
-
-    home_dir = os.getcwd()
-    folder_path = os.path.join(home_dir, "x4")
-    file_path = os.path.join(folder_path , "db.csv")
-    #df = pd.read_csv(file_path)
-
     url = 'https://raw.githubusercontent.com/csargin/x4/main/example/static/db.csv?token=GHSAT0AAAAAACSNZK23F6EK32GWXQNC5KRWZSW2IXQ'
     df = pd.read_csv(url, index_col=0, sep=';')  
     
