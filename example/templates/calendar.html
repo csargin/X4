@@ -1,5 +1,10 @@
-{% if api %}
-  {{ api }}
-{% else %}
-  Empty
-{% endif%}
+{% extends 'base.html' %}
+{% block content %}
+
+    
+    {% if api %}
+        Portfolio is not Empty
+    {% else %}
+        Portfolio is Empty
+    {% endif%}
+{% endblock %}
