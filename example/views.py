@@ -278,4 +278,4 @@ Zeus Vanguard; xl; paranid;13127715;0;19;281000;20000;12;50;0; military;233064; 
     
     
     
-    return render(request, 'calendar.html' , {'df': df.head() })
+    return render(request, 'calendar.html' , {'api': df.head() })
