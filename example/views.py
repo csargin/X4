@@ -6,6 +6,12 @@ from .models import Ships
 import os
 
 def home(request):
+    return render(request, 'home.html',{'api': "" })
+
+def about(request):
+    return render(request, 'about.html',{'api': "" })
+
+def ships(request):
     #ticker_list = tuple(Ships.objects.values_list('id', flat = True))
     ticker_list = Ships.objects.values_list( 'id', 'ship_name', 'ship_class', 'ship_race', 'ship_price', 'ship_weapon', 'ship_turret', 'ship_hull', 'ship_cargo', 'ship_dock', 'ship_hangar', 'ship_dlc', 'ship_role', 'ship_shield', 'ship_speed')
     if len(ticker_list)>0:
@@ -13,20 +19,12 @@ def home(request):
             api = ticker_list
         except Exception as e:
             api = "Error"
-        return render(request, 'home.html',{'api': api })
+        return render(request, 'ships.html',{'api': api })
     else:
-        return render(request, 'home.html',{'api': "" })
+        return render(request, 'ships.html',{'api': "" })
 
 def about(request):
-    ticker_list = Ships.objects.values_list( 'id', 'ship_name', 'ship_class', 'ship_race', 'ship_price', 'ship_weapon', 'ship_turret', 'ship_hull', 'ship_cargo', 'ship_dock', 'ship_hangar', 'ship_dlc', 'ship_role', 'ship_shield', 'ship_speed')
-    if len(ticker_list)>0:
-        try:
-            api = ticker_list
-        except Exception as e:
-            api = "Error"
-        return render(request, 'about.html',{'api': api })
-    else:
-        return render(request, 'about.html',{'api': "" })
+    return render(request, 'about.html',{'api': "" })
 
 
 def add_data(request):
@@ -54,7 +52,7 @@ def add_data(request):
                      ship_speed = row.ship_speed)
         ship.save()   
     
-    return render(request, 'calendar.html' )
+    return render(request, 'home.html' )
 
 def calendar(request):
-    return render(request, 'calendar.html' )
+    return render(request, 'calendar.html' ,{'api': "" } )
